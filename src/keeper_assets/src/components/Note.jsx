@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Note() {
+function Note(props) {
   return (
     <div className="note">
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button>
+      <button
+        onClick={() => {
+          props.onDelete(props.id); // triggered only when the button is clicked
+        }}
+      >
         DELETE
       </button>
     </div>
