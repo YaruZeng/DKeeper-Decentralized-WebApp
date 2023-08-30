@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import AddIcon from '@mui/icons-material/Add';
+import Zoom from '@mui/material/Zoom';
+import Fab from '@mui/material/Fab';
 
 function CreateArea(props) {
+
+  const [isExpended, setExprend] = useState(false); // control the state of the input area
+
   const [newInput, setNewInput] = useState({
     // control the states of the input window
     title: "",
@@ -25,25 +31,37 @@ function CreateArea(props) {
     event.preventDefault(); // prevent the automatic page reloading of the form
   }
 
+  function handleExpend() {
+    // triggered when the input area is clicked
+    setExprend(true);
+  }
+
   return (
     <div>
       <form>
-        <input
-          name="title"
-          placeholder="Title"
-          onChange={handleChange}
-          value={newInput.title}
-        />
+      {isExpended && (
+          <input
+            name="title"
+            onChange={handleChange}
+            value={note.title}
+            placeholder="Title"
+          />
+        )}
         <textarea
           name="content"
           placeholder="Take a note..."
           onChange={handleChange}
+          onClick={handleExpend}
+          rows={isExpended ? 3 : 1}
           value={newInput.content}
-          rows="3"
         />
-        <button type="submit" onClick={submitNote}>
-          Add
-        </button>
+        {/* Zoom: Expend when clicked */}
+        <Zoom in={isExpended ? true : false}>
+          {/* Fab: a button which turns grey when the mouse is over*/}
+          <Fab onClick={submitNote}>
+            <AddIcon />
+          </Fab>
+        </Zoom>
       </form>
     </div>
   );
