@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
-function CreateArea() {
-  const [newInput, setNewInput] = useState({ // control the states of the input window
+function CreateArea(props) {
+  const [newInput, setNewInput] = useState({
+    // control the states of the input window
     title: "",
     content: "",
   });
 
-  function handleChange(event) { // triggered when the inputs detect changes
+  function handleChange(event) {
+    // triggered when the inputs detect changes
     const { name, value } = event.target; // get the input name and value
     setNewInput((prevValue) => {
       return {
@@ -16,7 +18,10 @@ function CreateArea() {
     });
   }
 
-  function submitNote(event) { // triggered when the add button is clicked
+  function submitNote(event) {
+    // triggered when the add button is clicked
+    props.OnAdd(newInput); // add a note through the function AddNote() defined in Appp.jsx
+    setNewInput({ title: "", content: "" }); // clear the input after adding a note
     event.preventDefault(); // prevent the automatic page reloading of the form
   }
 
@@ -36,10 +41,7 @@ function CreateArea() {
           value={newInput.content}
           rows="3"
         />
-        <button
-          type="submit"
-          onClick={submitNote}
-        >
+        <button type="submit" onClick={submitNote}>
           Add
         </button>
       </form>
