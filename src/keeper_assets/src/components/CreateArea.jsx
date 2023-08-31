@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import AddIcon from '@mui/icons-material/Add';
-import Zoom from '@mui/material/Zoom';
-import Fab from '@mui/material/Fab';
+import AddIcon from "@material-ui/icons/Add";
+import Fab from "@material-ui/core/Fab";
+import Zoom from "@material-ui/core/Zoom";
 
 function CreateArea(props) {
 
@@ -38,12 +38,12 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form>
+      <form class="create-note">
       {isExpended && (
           <input
             name="title"
             onChange={handleChange}
-            value={note.title}
+            value={newInput.title}
             placeholder="Title"
           />
         )}
