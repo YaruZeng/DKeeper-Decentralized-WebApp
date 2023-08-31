@@ -8,7 +8,7 @@ actor Keeper {
     content: Text;
   };
 
-  var notes: List.List<Note> = List.nil<Note>(); // create a list object containing Note type with null as initial
+  stable var notes: List.List<Note> = List.nil<Note>(); // create a list object containing Note type with null as initial
 
   public func createNote(titleText: Text, contentText: Text) {
     // add a new note to database
@@ -24,5 +24,12 @@ actor Keeper {
   public query func readNotes(): async [Note] { // return an array of Note which is more efficient in JavaScript
     // query for notes from database
     return List.toArray(notes);
+  };
+
+  public func removeNote(id: Nat) { 
+    // delete a note from notes List
+    let listFront = List.take(notes, id);
+    let listBack = List.drop(notes, id + 1);
+    notes := List.append(listFront, listBack);
   };
 }
