@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import {keeper} from "../../../declarations/keeper";
 
 function App() {
   const [notes, setNotes] = useState([]); // control states of notes with an array to store all note objects
@@ -10,6 +11,7 @@ function App() {
   function AddNote(newItem) {
     // triggered when the add button is clicked
     setNotes((prevItems) => {
+      keeper.createNote(newItem.title, newItem.content); // create a new note on backend
       return [...prevItems, newItem]; // append the newItem to the previous array
     });
   }

@@ -34,8 +34,7 @@
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5",
     "util": "0.12.4",
-    "webpack": "5.69.1",
-    "webpack-dev-server": "^4.4.0"
+    "webpack": "5.69.1"
   },
   "browserslist": [
     "last 2 chrome version",
@@ -50,6 +49,7 @@
     "react-dom": "^16.8.2",
     "react-scripts": "5.0.0",
     "uuid": "8.3.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
