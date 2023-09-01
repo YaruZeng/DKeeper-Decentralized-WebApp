@@ -1,6 +1,6 @@
-# Keeper
+# DKeeper
 
-Welcome to my Keeper project which is supported by Udemy - The Complete 2023 Web Development Bootcamp. This webApp is deployed by dfx and note.js in the environment of ICP(Internet Computer) simulator with backend supported by Motoko, and frontend by CSS, HTML, and React. 
+Welcome to my DKeeper project which is supported by Udemy - The Complete 2023 Web Development Bootcamp. This webApp is deployed by dfx and note.js in the environment of ICP(Internet Computer) simulator with backend supported by Motoko, and frontend by CSS, HTML, and React. 
 
 <img width="1113" alt="image" src="https://github.com/IvyZayn/Keeper-Decentralized-WebApp/assets/91594306/1a90d40b-d9d8-4bbf-9545-7fddc7b1da88">
 
@@ -9,7 +9,7 @@ Welcome to my Keeper project which is supported by Udemy - The Complete 2023 Web
 To get started, you might want to download the repository and try the following commands:
 
 ```bash
-cd Keeper-Decentralized-WebApp/
+cd DKeeper-Decentralized-WebApp/
 dfx help
 dfx config --help
 ```
